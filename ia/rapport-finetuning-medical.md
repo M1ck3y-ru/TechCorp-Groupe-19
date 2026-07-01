@@ -67,8 +67,31 @@ précédente** — il vient directement de la source HuggingFace publique,
 téléchargé indépendamment. Pas de risque de backdoor ou d'empoisonnement
 identifié.
 
-## À faire côté IA (pas réalisé par DATA)
+## Notebook de fine-tuning
 
-- Fine-tuning LoRA/QLoRA sur `dataset/medical_dataset_sample_3000.json` (Colab, GPU gratuit)
-- Documenter le lien Colab + métriques d'entraînement (loss, epochs) — livrable demandé par `CONSIGNES.md`
+[`finetuning_medical_lora.ipynb`](finetuning_medical_lora.ipynb) — prêt à
+l'emploi : cloner ce repo dans Colab (fait automatiquement par le notebook),
+runtime GPU T4, QLoRA sur `microsoft/Phi-3.5-mini-instruct` avec la même
+config LoRA que le script hérité (`r=16`, `alpha=32`, modules `qkv_proj`/
+`o_proj`/`gate_proj`/`up_proj`/`down_proj`), `trust_remote_code=False`
+(durcissement recommandé par l'audit CYBER, F-ANSSI-R3, appliqué dès le
+départ). 3 epochs, split 90/10 train/eval pour suivre la loss de validation.
+
+## Résultats du fine-tuning
+
+*À remplir après exécution du notebook sur Colab :*
+
+| Métrique | Valeur |
+|---|---|
+| Lien Colab | *(à compléter)* |
+| Loss finale (train) | *(à compléter)* |
+| Loss finale (eval) | *(à compléter)* |
+| Nombre d'epochs | *(à compléter, 3 par défaut)* |
+| Temps d'entraînement | *(à compléter)* |
+| Observations qualitatives (test sur les questions médicales) | *(à compléter)* |
+
+## À faire côté IA
+
+- Exécuter [`finetuning_medical_lora.ipynb`](finetuning_medical_lora.ipynb) sur Colab (GPU gratuit) et compléter le tableau ci-dessus
+- Partager le lien Colab — livrable demandé par `CONSIGNES.md`
 - Rappel : mission **expérimentale**, ce modèle n'est pas destiné à la production (voir `medical_project/Readme.md` du dépôt source — avertissements sur la validation médicale obligatoire par des professionnels de santé)

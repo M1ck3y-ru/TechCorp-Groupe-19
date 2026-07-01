@@ -13,8 +13,13 @@ le rapport pour le détail et la recommandation.
 [`dataset/medical_dataset_sample_3000.json`](dataset/medical_dataset_sample_3000.json) —
 3000 exemples `{instruction, input, output}` (question patient → réponse
 médecin), nettoyés et échantillonnés depuis `ruslanmv/ai-medical-chatbot` (HF).
-Prêt à charger directement dans le notebook Colab pour le fine-tuning LoRA.
 Rapport détaillé : [`rapport-finetuning-medical.md`](rapport-finetuning-medical.md).
+
+**Notebook prêt à l'emploi** : [`finetuning_medical_lora.ipynb`](finetuning_medical_lora.ipynb)
+— à ouvrir dans Google Colab (runtime GPU T4), clone le repo et charge le
+dataset automatiquement, QLoRA sur Phi-3.5-mini-instruct. Après exécution,
+reporter loss/epochs dans `rapport-finetuning-medical.md` et partager le lien
+Colab (livrable demandé par `CONSIGNES.md`).
 
 ## Modèle financier hérité — ne pas réutiliser tel quel
 
